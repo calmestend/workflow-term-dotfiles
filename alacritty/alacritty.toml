@@ -1,20 +1,18 @@
-import = [
-	"~/.config/alacritty/colors.toml"
-]
-
-[shell]
-program = "/bin/fish"
+[general]
+import = [ './colors.toml' ]
 
 [font]
 normal = { family = "Iosevka Nerd Font", style = "Regular" }
 bold = { family = "Iosevka Nerd Font", style = "Bold" }
 italic = { family = "Iosevka Nerd Font", style = "Italic" }
 bold_italic = { family = "Iosevka Nerd Font", style = "Bold Italic" }
-size = 12
+size = 14
 
 [window]
-padding = { x = 16, y = 16}
+padding = { x = 12, y = 12}
 opacity = 0.8
 
 [cursor]
 style = { shape = "Underline", blinking = "Never" }
+
+[terminal]
