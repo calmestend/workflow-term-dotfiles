@@ -61,6 +61,7 @@ return {
 			"lua_ls",
 			"emmet_ls",
 			"pyright",
+			"zls",
 		}
 
 		--Servers Setup
@@ -109,6 +110,13 @@ return {
 			on_attach = on_attach,
 			capabilities = capabilities,
 			filetypes = { "html" }
+		})
+
+		-- Zig Setup
+		lsp_config.zls.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			filetypes = { "zig" }
 		})
 
 	end,

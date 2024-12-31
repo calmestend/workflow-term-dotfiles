@@ -1,0 +1,23 @@
+font-family = "Iosevka Nerd Font"
+
+theme = "rose-pine"
+
+cursor-style = underline
+cursor-style-blink = false
+mouse-hide-while-typing = true
+
+window-decoration = true
+gtk-titlebar = false
+
+background-opacity = 0.8
+
+window-padding-x = 16
+window-padding-y = 16
+window-padding-color = background
+
+confirm-close-surface = false
+
+shell-integration = fish
+shell-integration-features = no-cursor, title, sudo
+
+term = xterm-ghostty 
