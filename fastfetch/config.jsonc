@@ -1,0 +1,43 @@
+//   _____ _____ _____ _____ _____ _____ _____ _____ _____ 
+//  |   __|  _  |   __|_   _|   __|   __|_   _|     |  |  |
+//  |   __|     |__   | | | |   __|   __| | | |   --|     |
+//  |__|  |__|__|_____| |_| |__|  |_____| |_| |_____|__|__|  FULL INFO
+//
+//  by Bina
+
+
+{
+	"$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+	"logo": {
+		"source": "~/.config/fastfetch/images/basil.webp",
+		"type": "kitty",
+		"height": 14,
+		"padding": {
+			"top": 1
+		}
+	},
+	"modules": [
+		"title",
+		"separator",
+		"os",
+		"host",
+		"kernel",
+		"packages",
+		"shell",
+		"display",
+		"lm",
+		"de",
+		"wm",
+		"wmtheme",
+		"terminal",
+		"cpu",
+		"gpu",
+		"disk",
+		"media",
+		"localip",
+		"wifi",
+		"version",
+		"break",
+		"colors"
+	]
+}
