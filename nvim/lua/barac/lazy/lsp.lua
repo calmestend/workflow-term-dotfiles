@@ -62,6 +62,7 @@ return {
 			"emmet_ls",
 			"pyright",
 			"zls",
+			"jdtls"
 		}
 
 		--Servers Setup
@@ -117,6 +118,13 @@ return {
 			on_attach = on_attach,
 			capabilities = capabilities,
 			filetypes = { "zig" }
+		})
+
+		-- Java Setup
+		lsp_config.jdtls.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			filetypes = { "java" }
 		})
 
 	end,
