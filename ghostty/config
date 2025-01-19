@@ -6,8 +6,11 @@ cursor-style = underline
 cursor-style-blink = false
 mouse-hide-while-typing = true
 
-window-decoration = true
+window-theme = ghostty
 gtk-titlebar = false
+gtk-wide-tabs = false
+gtk-adwaita = false
+window-decoration = false
 
 background-opacity = 0.8
 
