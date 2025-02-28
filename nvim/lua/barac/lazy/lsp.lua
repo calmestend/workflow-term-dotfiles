@@ -44,12 +44,12 @@ return {
 			-- keybind Options
 			local opts = { noremap = true, silent = true, buffer = bufnr }
 			-- Keybinds
-			keymap.set("n", "gf", "<cmd>Lspsaga finder<CR>", opts)      -- show definition, references
-			keymap.set("n", "go", "<cmd>Lspsaga outline<CR>", opts)     -- show LSP outine of current buffer
+			keymap.set("n", "gf", "<cmd>Lspsaga finder<CR>", opts) -- show definition, references
+			keymap.set("n", "go", "<cmd>Lspsaga outline<CR>", opts) -- show LSP outine of current buffer
 			keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
 			keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to previous diagnostic in buffer
 			keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
-			keymap.set("n", ";.", "<cmd>Lspsaga hover_doc<CR>", opts)   -- show documentation for what is under cursor
+			keymap.set("n", ";.", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
 		end
 
 		--Capabilities With Nvim-CMP
@@ -62,13 +62,14 @@ return {
 			"emmet_ls",
 			"pyright",
 			"zls",
-			"jdtls"
+			"jdtls",
 		}
 
 		--Servers Setup
 		for _, server in pairs(servers) do
 			if server == "lua-language-server" then
-				goto continue end
+				goto continue
+			end
 
 			lsp_config[server].setup({
 				on_attach = on_attach,
@@ -82,50 +83,49 @@ return {
 		lsp_config.lua_ls.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "lua" }
+			filetypes = { "lua" },
 		})
 
 		-- Typescript/Javascript Setup
 		lsp_config.ts_ls.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "js", "ts", "tsx", "jsx" }
+			filetypes = { "js", "ts", "tsx", "jsx" },
 		})
 
 		-- Python
 		lsp_config.pyright.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "py" }
+			filetypes = { "py" },
 		})
 
 		-- Html Setup
 		lsp_config.html.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "html" }
+			filetypes = { "html" },
 		})
 
 		-- Emmet Setup
 		lsp_config.emmet_ls.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "html" }
+			filetypes = { "html" },
 		})
 
 		-- Zig Setup
 		lsp_config.zls.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "zig" }
+			filetypes = { "zig" },
 		})
 
 		-- Java Setup
 		lsp_config.jdtls.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "java" }
+			filetypes = { "java" },
 		})
-
 	end,
 }

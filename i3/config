@@ -10,7 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-set $term ghostty
+set $term kitty
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:IosevkaNerdFont 10
@@ -35,7 +35,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 exec --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 165
-exec --no-startup-id /home/barac/.config/lemonbar/bar.sh
+exec --no-startup-id $HOME/.config/lemonbar/bar.sh
 exec --no-startup-id picom
 exec --no-startup-id nitrogen --restore
 
@@ -57,6 +57,9 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec $term
 # kill focused window
 bindsym $mod+w kill
+
+# exec screenshooter
+bindsym $mod+Shift+s exec xfce4-screenshooter
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
@@ -183,7 +186,7 @@ set $black      #000000
 # target                 title       bg         text       indicator  border
 client.focused           $white      $white     $black     $white     $white
 client.focused_inactive  $light_gray $black     $gray      $light_gray $light_gray
-client.unfocused         $gray       $black     $dark_gray $gray      $gray
+client.unfocused         $dark_gray       $black     $dark_gray $dark_gray      $dark_gray
 client.urgent            $black      $white     $black     $dark_gray $black
 client.placeholder       $dark_gray  $black     $gray      $dark_gray $dark_gray
 client.background        $black

@@ -13,7 +13,7 @@ return {
 		highlight = {
 			enable = true,
 			additional_vim_regex_highlighting = { "markdown" },
-		}
+		},
 	},
 	config = function(_, opts)
 		local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
@@ -34,5 +34,5 @@ return {
 		})
 
 		require("nvim-treesitter.configs").setup(opts)
-	end
+	end,
 }
