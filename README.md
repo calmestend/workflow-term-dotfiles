@@ -13,7 +13,6 @@
 <h2> 🛠 </h2>
 <ul>
   <li>Neovim</li>
-  <li>Tmux</li>
   <li>Yazi</li>
   <li>i3</li>
   <li>Picom</li>
