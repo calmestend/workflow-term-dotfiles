@@ -63,6 +63,7 @@ return {
 			"pyright",
 			"zls",
 			"jdtls",
+			"svelte",
 		}
 
 		--Servers Setup
@@ -87,6 +88,19 @@ return {
 		})
 
 		-- Typescript/Javascript Setup
+		lsp_config.ts_ls.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			filetypes = { "js", "ts", "tsx", "jsx" },
+		})
+
+		-- Svelte Setup
+		lsp_config.svelte.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			filetypes = { "svelte" },
+		})
+
 		lsp_config.ts_ls.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
