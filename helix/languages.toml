@@ -1,0 +1,98 @@
+[language-server]
+nixd = { command = "nixd" }
+taplo = { command = "taplo", args = ["lsp", "stdio"] }
+emmet-ls = { command = "emmet-ls", args = ["--stdio"] }
+vscode-html-language-server = { command = "vscode-html-language-server", args = ["--stdio"], config = { provideFormatter = true } }
+superhtml = {  command = "superhtml", args = ["lsp"]}
+tailwindcss-ls = { command = "tailwindcss-language-server", args = ["--stdio"] }
+eslint-ls = { command = "vscode-eslint-language-server", args = ["--stdio"] }
+
+[[language]]
+name = "toml"
+scope = "source.toml"
+injection-regex = "toml"
+file-types = ["toml", { glob = "pdm.lock" }, { glob = "poetry.lock" }, { glob = "Cargo.lock" }, { glob = "uv.lock" }]
+comment-token = "#"
+language-servers = [ "taplo" ]
+indent = { tab-width = 4, unit = "  " }
+
+[[grammar]]
+name = "toml"
+source = { git = "https://github.com/ikatyang/tree-sitter-toml", rev = "7cff70bbcbbc62001b465603ca1ea88edd668704" }
+
+[[language]]
+name = "nix"
+scope = "source.nix"
+injection-regex = "nix"
+file-types = ["nix"]
+shebangs = []
+comment-token = "#"
+language-servers = [ "nil", "nixd" ]
+indent = { tab-width = 4, unit = "  " }
+
+[[grammar]]
+name = "nix"
+source = { git = "https://github.com/nix-community/tree-sitter-nix", rev = "1b69cf1fa92366eefbe6863c184e5d2ece5f187d" }
+
+[[language]]
+name = "html"
+scope = "text.html.basic"
+injection-regex = "html"
+file-types = ["html", "htm", "shtml", "xhtml", "xht", "jsp", "asp", "aspx", "jshtm", "volt", "rhtml", "cshtml"]
+block-comment-tokens = { start = "<!--", end = "-->" }
+language-servers = [ "vscode-html-language-server", "emmet-ls", "superhtml" ]
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+
+[[grammar]]
+name = "html"
+source = { git = "https://github.com/tree-sitter/tree-sitter-html", rev = "29f53d8f4f2335e61bf6418ab8958dac3282077a" }
+
+[[language]]
+name = "svelte"
+auto-format = true
+language-servers = [ "svelteserver", "eslint-ls"]
+formatter = { command = "prettier" }
+indent = { tab-width = 4, unit = "  " }
+
+[[language]]
+name = "typescript"
+auto-format = true
+language-servers = ["typescript-language-server", "emmet-ls", "eslint-ls"]
+formatter = { command = "prettier" }
+indent = { tab-width = 4, unit = "  " }
+
+[[language]]
+name = "javascript"
+auto-format = true
+language-servers = ["typescript-language-server", "emmet-ls", "eslint-ls"]
+formatter = { command = "prettier" }
+indent = { tab-width = 4, unit = "  " }
+
+[[language]]
+name = "jsx"
+auto-format = true
+language-servers = ["typescript-language-server", "emmet-ls", "eslint-ls"]
+formatter = { command = "prettier" }
+indent = { tab-width = 4, unit = "  " }
+
+[[language]]
+name = "tsx"
+auto-format = true
+language-servers = ["typescript-language-server" , "emmet-ls", "eslint-ls"]
+formatter = { command = "prettier" }
+indent = { tab-width = 4, unit = "  " }
+
+[[language]]
+name = "css"
+auto-format = true
+language-servers = ["vscode-css-language-server" , "emmet-ls" , "eslint-ls"]
+formatter = { command = "prettier" }
+indent = { tab-width = 4, unit = "  " }
+
+[[language]]
+name = "scss"
+auto-format= true
+language-servers = ["vscode-css-language-server" , "emmet-ls" , "eslint-ls"]
+formatter = { command = "prettier" }
+indent = { tab-width = 4, unit = "  " }

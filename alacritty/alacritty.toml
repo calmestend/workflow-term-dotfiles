@@ -10,7 +10,7 @@ size = 12
 
 [window]
 padding = { x = 12, y = 12}
-opacity = 0.8
+opacity = 1
 
 [cursor]
 style = { shape = "Underline", blinking = "Never" }

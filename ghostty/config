@@ -1,6 +1,6 @@
 font-family = "Iosevka Nerd Font"
 
-theme = "rose-pine"
+theme = "Kanagawa Dragon"
 
 cursor-style = underline
 cursor-style-blink = false
@@ -13,6 +13,7 @@ gtk-adwaita = false
 window-decoration = false
 
 background-opacity = 1
+background=#000000
 
 window-padding-x = 16
 window-padding-y = 16
