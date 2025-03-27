@@ -53,7 +53,7 @@ return {
 		end
 
 		--Capabilities With Nvim-CMP
-		local capabilities = require("cmp_nvim_lsp").default_capabilities()
+		local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 		local servers = {
 			"html",
@@ -64,6 +64,7 @@ return {
 			"zls",
 			"jdtls",
 			"svelte",
+			"nixd",
 		}
 
 		--Servers Setup
@@ -133,6 +134,13 @@ return {
 			on_attach = on_attach,
 			capabilities = capabilities,
 			filetypes = { "zig" },
+		})
+
+		-- Nix Setup
+		lsp_config.nixd.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			filetypes = { "nix" },
 		})
 
 		-- Java Setup
